@@ -32,13 +32,7 @@ public class RequestHeaderServlet extends HttpServlet {
     //Header 모든 정보
     private void printHeaders(HttpServletRequest request) {
         System.out.println("--- Headers - start ---");
-        /*
-         Enumeration<String> headerNames = request.getHeaderNames();
-         while (headerNames.hasMoreElements()) {
-         String headerName = headerNames.nextElement();
-         System.out.println(headerName + ": " + request.getHeader(headerName));
-         }
-        */
+
         request.getHeaderNames().asIterator()
                 .forEachRemaining(headerName -> System.out.println(headerName + ": " + request.getHeader(headerName)));
                         System.out.println("--- Headers - end ---");
@@ -83,7 +77,7 @@ public class RequestHeaderServlet extends HttpServlet {
         System.out.println("[Remote 정보]");
         System.out.println("request.getRemoteHost() = " +
                 request.getRemoteHost()); //
-        System.out.println("request.getRemoteAddr() = " +
+        System.out.println("request.getRemoteAdder() = " +
                 request.getRemoteAddr()); //
         System.out.println("request.getRemotePort() = " +
                 request.getRemotePort()); //
@@ -91,7 +85,7 @@ public class RequestHeaderServlet extends HttpServlet {
         System.out.println("[Local 정보]");
         System.out.println("request.getLocalName() = " +
                 request.getLocalName()); //
-        System.out.println("request.getLocalAddr() = " +
+        System.out.println("request.getLocalAdder() = " +
                 request.getLocalAddr()); //
         System.out.println("request.getLocalPort() = " +
                 request.getLocalPort()); //
